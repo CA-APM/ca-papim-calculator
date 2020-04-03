@@ -79,7 +79,7 @@ var logSummary = true;
 ```
 
 ## Installation
-**Important!** Before installing this aggregation calculator you **MUST** change the existing javascript calculator `apim.js` as described under Prerequisites and configure it for your environment.
+**Important!** Before installing this aggregation calculator you **MUST** change the existing javascript calculator `apim.js` as described under Prerequisites and configure `apim-aggregation.js` for your environment.
 
 Only then copy `apim-aggregation.js` to `<EM_HOME>/scripts/apim.js`.
 
@@ -93,7 +93,7 @@ The Introscope Enterprise Manager will read the new script file within 60 second
 # Usage Instructions
 
 ## Metric description
-All the metrics from each individual service will be aggregated at every level up to gateway. Gateway metrics will be aggregated into cluster as configured under `SuperDomain|Custom Metric Host (Virtual)|Custom Metric Process (Virtual)|Custom Metric Agent (Virtual)|API Gateway Cluster|<cluster>`
+All the metrics from each individual service will be aggregated at every level up to gateway. Gateway metrics will be aggregated into clusters as configured under `SuperDomain|Custom Metric Host (Virtual)|Custom Metric Process (Virtual)|Custom Metric Agent (Virtual)|API Gateway Cluster|<cluster>`
 
 ## Debugging and Troubleshooting
 If you want to have two messages logged to `IntroscopeEnterpriseManager.log` for every execution (every 15 seconds) set `var logSummary = true;`. The log messages will look like these:
@@ -101,7 +101,7 @@ If you want to have two messages logged to `IntroscopeEnterpriseManager.log` for
 4/03/20 09:50:15.028 AM GMT [INFO] [master clock] [Manager.JavaScript|apim-aggregation.js] calculator apim-aggregation.js started with 390 metrics
 4/03/20 09:50:15.042 AM GMT [INFO] [master clock] [Manager.JavaScript|apim-aggregation.js] calculator apim-aggregation.js created 840 metrics
 ```
-Use the number of metrics in the *start* message to majke sure you send as few metrics as possible to the calculator. You can also calculate the time the calculator ran, e.g. 14ms in the above example.
+Use the number of metrics in the *start* message to make sure you send as few metrics as possible to the calculator. You can also calculate the time the calculator ran, e.g. 14ms in the above example.
 
 To debug the calculator you can set `var DEBUG = 1;` in `apim-aggregation.js`. This will log several messages per metric (!) to `IntroscopeEnterpriseManager.log` at log level DEBUG.
 
