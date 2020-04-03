@@ -1,15 +1,39 @@
+// Step 1: define which agents to aggregate. Use smallest set possible!
+function getAgentRegex() {
+    return ".*\\|.*\\|.*";
+}
+
 function execute(metricData, javascriptResultSetHelper) {
+
+    // Step 2: define all your clusters here
+    var clusters = {
+      "black" : [
+        "atviegw0201.gg.broadcom.com",
+        "atviegw0202.gg.broadcom.com",
+        "atviegw0203.gg.broadcom.com"
+      ],
+      "white": [
+        "atviegw0204.gg.broadcom.com",
+        "atviegw0205.gg.broadcom.com",
+        "atviegw0206.gg.broadcom.com"
+      ]
+    };
+
+    // Step 3: do you want a summary logged at every calculator execution (every 15 seconds?)
+    var logSummary = true;
+
+    // set to 1 to log debug messages at level INFO into IntroscopeEnterpriseManager.log
+    var DEBUG = 0;
+
+    // DO NOT CHANGE BELOW!!!
 
     var CLUSTER = "-1";
     var GATEWAY = "1";
     var SERVICE = "3";
     var SUB_SERVICE = "4";
 
-    // define at which levels to aggregate
-    var AGGREGATION_LEVELS = [CLUSTER, GATEWAY, SERVICE];
-
-
-    var CLUSTER_PREFIX = "Cluster";
+    // define the aggregation name
+    var CLUSTER_PREFIX = "SuperDomain|Custom Metric Host (Virtual)|Custom Metric Process (Virtual)|Custom Metric Agent (Virtual)|API Gateway Cluster|";
     var createdCount = 0;
 
     var backendMetricPath = "";
@@ -30,11 +54,22 @@ function execute(metricData, javascriptResultSetHelper) {
     var otherMetricMap = {};
     var agentMap = {};
 
+    var clusterFrontendValueMap = {};
+    var clusterFrontendCountValueMap = {};
+    var clusterFrontendMinValueMap = {};
+    var clusterFrontendMaxValueMap = {};
+
+    var clusterBackendValueMap = {};
+    var clusterBackendCountValueMap = {};
+    var clusterBackendMinValueMap = {};
+    var clusterBackendMaxValueMap = {};
+
+    var clusterOtherMetricMap = {};
+
     var gatewayString = "|Gateway|Services|";
 
-    // do we really need to do this?
-    if (AGGREGATION_LEVELS.length == 0) {
-      return javascriptResultSetHelper;
+    if (logSummary) {
+      log.information("calculator apim-aggregation.js started with " + metricData.length + " metrics");
     }
 
     // for every matching metric
@@ -42,8 +77,8 @@ function execute(metricData, javascriptResultSetHelper) {
 
         // get metric path
         var metric = metricData[i].agentMetric.attributeURL;
-        //log.info("init " + metric);
-        //log.info("metricData[i].agentName: " + metricData[i].agentName);
+        //log.debug("init " + metric);
+        //log.debug("metricData[i].agentName: " + metricData[i].agentName);
         var agent = metricData[i].agentName.processURL;
 
         // filter metrics even more
@@ -62,97 +97,183 @@ function execute(metricData, javascriptResultSetHelper) {
             continue;
         }
 
-
         var value = metricData[i].timeslicedValue.value;
         var min = metricData[i].timeslicedValue.getMinimumAsLong();
         var max = metricData[i].timeslicedValue.getMaximumAsLong();
         var count = metricData[i].timeslicedValue.dataPointCount;
         var frequency = metricData[i].frequency;
+        var gateway = metric.substring(0, indexOfGatewayServices);
 
-        log.info("init " + metric + " = " + value);
+        if (DEBUG) { log.debug("init " + metric + " = " + value + ", gateway = " + gateway); }
 
         // split by path and metric name
         var colonIndex = metric.indexOf(":");
         var tokens = metric.substring(0, colonIndex).split("\\|");
         var metricName = metric.substring(colonIndex);
 
-        // log.info("found " + tokens.length + " tokens, metricName = " + metricName);
+        // log.debug("found " + tokens.length + " tokens, metricName = " + metricName);
 
         var newMetricPath = agent;
-        // for all but the metric name itself
-        for (j = CLUSTER; j < tokens.length-1; ++j) {
+        var clusterMetricPath = CLUSTER_PREFIX;
+        var writeCluster = false;
+        var cluster = 'not found';
 
-          // build new metric path by adding next token
-          if (j == CLUSTER) {
-            agentMap[agent] = agent;
-            newMetricPath = CLUSTER_PREFIX;
-          } else {
-            newMetricPath = newMetricPath + "\|" + tokens[j];
-          }
-
-          // only aggregate at selected levels
-          var found = false;
-          for (var k = 0; k < AGGREGATION_LEVELS.length; ++k) {
-            if (j == AGGREGATION_LEVELS[k]) {
-              found = true;
+        for (var key in clusters) {
+          for (var clusterIndex = 0; clusterIndex < clusters[key].length; clusterIndex++) {
+            if (gateway == clusters[key][clusterIndex]) {
+              cluster = key;
+              clusterMetricPath = CLUSTER_PREFIX + cluster;
+              writeCluster = true;
               break;
             }
           }
-          if (!found) {
-            continue;
+        }
+
+        if (DEBUG) { log.debug("   gateway = " + gateway + " found in cluster " + cluster); }
+
+        for (j = 0; j < tokens.length; ++j) {
+
+          // build new metric path by adding next token
+          // if (j == CLUSTER) {
+          //   agentMap[agent] = agent;
+          //   newMetricPath = CLUSTER_PREFIX;
+          // } else {
+          //   newMetricPath = newMetricPath + "\|" + tokens[j];
+          // }
+          newMetricPath = newMetricPath + "\|" + tokens[j];
+          if (j > GATEWAY) {
+            // no gateway in cluster metric path!
+            // if token == 'gateway' append directly to cluster name
+            clusterMetricPath = clusterMetricPath + "\|" + tokens[j];
           }
+          // only aggregate at selected levels
+          // var found = false;
+          // for (var k = 0; k < AGGREGATION_LEVELS.length; ++k) {
+          //   if (j == AGGREGATION_LEVELS[k]) {
+          //     found = true;
+          //     break;
+          //   }
+          // }
+          // if (!found) {
+          //   continue;
+          // }
 
           var newMetricName = newMetricPath + metricName;
-          log.info("newMetricName: " + newMetricName);
+          var clusterMetricName = clusterMetricPath + metricName;
+          if (DEBUG) {
+            log.debug("newMetricName: " + newMetricName
+              + ", clusterMetricName: " + clusterMetricName + ", j: " + j);
+          }
 
           // for weighted ART we need both value and count
           if (metricName.endsWith(":Front End Average Response Time (ms)") ) {
-            if (frontendValueMap[newMetricName] == null) {
-              frontendValueMap[newMetricName] = value * count;
-              frontendCountValueMap[newMetricName] = count;
-              frontendMinValueMap[newMetricName] = min;
-              frontendMaxValueMap[newMetricName] = max;
-            } else {
-              frontendValueMap[newMetricName] = value * count + frontendValueMap[newMetricName];
-              frontendCountValueMap[newMetricName] = count + frontendCountValueMap[newMetricName];
-              if (min < frontendMinValueMap[newMetricName]) { frontendMinValueMap[newMetricName] = min; }
-              if (max > frontendMaxValueMap[newMetricName]) { frontendMaxValueMap[newMetricName] = max; }
+            // for all but the metric name itself
+            if (j < tokens.length-1) {
+              if (frontendValueMap[newMetricName] == null) {
+                frontendValueMap[newMetricName] = value * count;
+                frontendCountValueMap[newMetricName] = count;
+                frontendMinValueMap[newMetricName] = min;
+                frontendMaxValueMap[newMetricName] = max;
+              } else {
+                frontendValueMap[newMetricName] = value * count + frontendValueMap[newMetricName];
+                frontendCountValueMap[newMetricName] = count + frontendCountValueMap[newMetricName];
+                if (min < frontendMinValueMap[newMetricName]) { frontendMinValueMap[newMetricName] = min; }
+                if (max > frontendMaxValueMap[newMetricName]) { frontendMaxValueMap[newMetricName] = max; }
+              }
+
+              if (DEBUG) {
+                log.debug("  FE ART * Count = " + frontendValueMap[newMetricName]
+                  + ", FE Count = " + frontendCountValueMap[newMetricName]
+                  + ", FE Min" + frontendMinValueMap[newMetricName]
+                  + ", FE Max" + frontendMaxValueMap[newMetricName]);
+                }
+            }
+            // now also for cluster
+            if (writeCluster && (j >= GATEWAY)) {
+              if (clusterFrontendValueMap[clusterMetricName] == null) {
+                clusterFrontendValueMap[clusterMetricName] = value * count;
+                clusterFrontendCountValueMap[clusterMetricName] = count;
+                clusterFrontendMinValueMap[clusterMetricName] = min;
+                clusterFrontendMaxValueMap[clusterMetricName] = max;
+              } else {
+                clusterFrontendValueMap[clusterMetricName] = value * count + clusterFrontendValueMap[clusterMetricName];
+                clusterFrontendCountValueMap[clusterMetricName] = count + clusterFrontendCountValueMap[clusterMetricName];
+                if (min < clusterFrontendMinValueMap[clusterMetricName]) { clusterFrontendMinValueMap[clusterMetricName] = min; }
+                if (max > clusterFrontendMaxValueMap[clusterMetricName]) { clusterFrontendMaxValueMap[clusterMetricName] = max; }
+              }
+
+              if (DEBUG) {
+                log.debug("  Cluster FE ART * Count = " + clusterFrontendValueMap[clusterMetricName]
+                  + ", Cluster FE Count = " + clusterFrontendCountValueMap[clusterMetricName]
+                  + ", Cluster FE Min" + clusterFrontendMinValueMap[clusterMetricName]
+                  + ", Cluster FE Max" + clusterFrontendMaxValueMap[clusterMetricName]);
+              }
             }
 
-            log.info("  FE ART * Count = " + frontendValueMap[newMetricName]
-                + "  FE Count = " + frontendCountValueMap[newMetricName]
-                + "  FE Min" + frontendMinValueMap[newMetricName]
-                + "  FE Max" + frontendMaxValueMap[newMetricName]);
           } else if (metricName.endsWith(":Back End Average Response Time (ms)") ) {
-            if (backendValueMap[newMetricName] == null) {
-              backendValueMap[newMetricName] = value * count;
-              backendCountValueMap[newMetricName] = count;
-              backendMinValueMap[newMetricName] = min;
-              backendMaxValueMap[newMetricName] = max;
-            } else {
-              backendValueMap[newMetricName] = value * count + backendValueMap[newMetricName];
-              backendCountValueMap[newMetricName] = count + backendCountValueMap[newMetricName];
-              if (min < backendMinValueMap[newMetricName]) { backendMinValueMap[newMetricName] = min; }
-              if (max > backendMaxValueMap[newMetricName]) { backendMaxValueMap[newMetricName] = max; }
-            }
+            // for all but the metric name itself
+            if (j < tokens.length-1) {
+              if (backendValueMap[newMetricName] == null) {
+                backendValueMap[newMetricName] = value * count;
+                backendCountValueMap[newMetricName] = count;
+                backendMinValueMap[newMetricName] = min;
+                backendMaxValueMap[newMetricName] = max;
+              } else {
+                backendValueMap[newMetricName] = value * count + backendValueMap[newMetricName];
+                backendCountValueMap[newMetricName] = count + backendCountValueMap[newMetricName];
+                if (min < backendMinValueMap[newMetricName]) { backendMinValueMap[newMetricName] = min; }
+                if (max > backendMaxValueMap[newMetricName]) { backendMaxValueMap[newMetricName] = max; }
+              }
 
-            log.info("  BE ART * Count = " + backendValueMap[newMetricName]
-                + "  BE Count = " + backendCountValueMap[newMetricName]
-                + "  BE Min" + backendMinValueMap[newMetricName]
-                + "  BE Max" + backendMaxValueMap[newMetricName]);
+              if (DEBUG) {
+                log.debug("  BE ART * Count = " + backendValueMap[newMetricName]
+                  + ", BE Count = " + backendCountValueMap[newMetricName]
+                  + ", BE Min" + backendMinValueMap[newMetricName]
+                  + ", BE Max" + backendMaxValueMap[newMetricName]);
+              }
+            }
+            // now also for cluster
+            if (writeCluster && (j >= GATEWAY)) {
+              if (clusterBackendValueMap[clusterMetricName] == null) {
+                  clusterBackendValueMap[clusterMetricName] = value * count;
+                  clusterBackendCountValueMap[clusterMetricName] = count;
+                  clusterBackendMinValueMap[clusterMetricName] = min;
+                  clusterBackendMaxValueMap[clusterMetricName] = max;
+                } else {
+                  clusterBackendValueMap[clusterMetricName] = value * count + clusterBackendValueMap[clusterMetricName];
+                  clusterBackendCountValueMap[clusterMetricName] = count + clusterBackendCountValueMap[clusterMetricName];
+                  if (min < clusterBackendMinValueMap[clusterMetricName]) { clusterBackendMinValueMap[clusterMetricName] = min; }
+                  if (max > clusterBackendMaxValueMap[clusterMetricName]) { clusterBackendMaxValueMap[clusterMetricName] = max; }
+                }
+
+                if (DEBUG) {
+                  log.debug("  BE ART * Count = " + clusterBackendValueMap[clusterMetricName]
+                    + ", BE Count = " + clusterBackendCountValueMap[clusterMetricName]
+                    + ", BE Min" + clusterBackendMinValueMap[clusterMetricName]
+                    + ", BE Max" + clusterBackendMaxValueMap[clusterMetricName]);
+                }
+            }
           } else {
-            if (otherMetricMap[newMetricName] == null) {
-              otherMetricMap[newMetricName] = value;
-            } else {
-              otherMetricMap[newMetricName] = value + otherMetricMap[newMetricName];
+            // for all but the metric name itself
+            if (j < tokens.length-1) {
+              if (otherMetricMap[newMetricName] == null) {
+                otherMetricMap[newMetricName] = value;
+              } else {
+                otherMetricMap[newMetricName] = value + otherMetricMap[newMetricName];
+              }
+
+              if (DEBUG) { log.debug("  " + newMetricName + " = " + otherMetricMap[newMetricName]); }
             }
+            // now also for cluster
+            if (writeCluster && (j >= GATEWAY)) {
+              if (clusterOtherMetricMap[clusterMetricName] == null) {
+                clusterOtherMetricMap[clusterMetricName] = value;
+              } else {
+                clusterOtherMetricMap[clusterMetricName] = value + clusterOtherMetricMap[clusterMetricName];
+              }
 
-            log.info("  " + metricName + " = " + otherMetricMap[newMetricName]);
-          }
-
-          if (j == CLUSTER) {
-            // restore metric path
-            newMetricPath = agent;
+              if (DEBUG) { log.debug("  " + clusterMetricName + " = " + clusterOtherMetricMap[clusterMetricName]); }
+            }
           }
         }
     }
@@ -168,28 +289,15 @@ function execute(metricData, javascriptResultSetHelper) {
             metricValue = frontendValueMap[frontendMetric];
         }
 
-        if (frontendMetric.indexOf(CLUSTER_PREFIX) == 0) {
-            // add cluster metrics to all agents
-            for (var agent in agentMap) {
-              log.info("    creating metric " + agent + "\|" + frontendMetric + " = " + metricValue);
-              javascriptResultSetHelper.addMetric(agent + "\|" + frontendMetric,
-                frontendCountValueMap[frontendMetric],
-                metricValue,
-                frontendMinValueMap[frontendMetric],
-                frontendMaxValueMap[frontendMetric],
-                Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerPercentage,
-      				  frequency);
-            }
-        } else {
-          log.info("    creating metric " + frontendMetric + " = " + metricValue);
-          javascriptResultSetHelper.addMetric(frontendMetric,
-            frontendCountValueMap[frontendMetric],
-            metricValue,
-            frontendMinValueMap[frontendMetric],
-            frontendMaxValueMap[frontendMetric],
-            Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerPercentage,
-  				  frequency);
-        }
+        if (DEBUG) { log.debug("    creating metric " + frontendMetric + " = " + metricValue); }
+        javascriptResultSetHelper.addMetric(frontendMetric,
+          frontendCountValueMap[frontendMetric],
+          metricValue,
+          frontendMinValueMap[frontendMetric],
+          frontendMaxValueMap[frontendMetric],
+          Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerDuration,
+				  frequency);
+        createdCount++;
     }
 
     for (var backendMetric in backendValueMap) {
@@ -200,63 +308,88 @@ function execute(metricData, javascriptResultSetHelper) {
             metricValue = backendValueMap[backendMetric];
         }
 
-        if (backendMetric.indexOf(CLUSTER_PREFIX) == 0) {
-            // add cluster metrics to all agents
-            for (var agent in agentMap) {
-              log.info("    creating metric " + agent + "\|" + backendMetric + " = " + metricValue);
-              javascriptResultSetHelper.addMetric(agent + "\|" + backendMetric,
-                backendCountValueMap[backendMetric],
-                metricValue,
-                backendMinValueMap[backendMetric],
-                backendMaxValueMap[backendMetric],
-                Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerPercentage,
-                frequency);
-            }
-        } else {
-          log.info("    creating metric " + backendMetric + " = " + metricValue);
-          javascriptResultSetHelper.addMetric(backendMetric,
-            backendCountValueMap[backendMetric],
-            metricValue,
-            backendMinValueMap[backendMetric],
-            backendMaxValueMap[backendMetric],
-            Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerPercentage,
-  				  frequency);
-        }
+        if (DEBUG) { log.debug("    creating metric " + backendMetric + " = " + metricValue); }
+        javascriptResultSetHelper.addMetric(backendMetric,
+          backendCountValueMap[backendMetric],
+          metricValue,
+          backendMinValueMap[backendMetric],
+          backendMaxValueMap[backendMetric],
+          Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerDuration,
+				  frequency);
+        createdCount++;
     }
 
     for (var otherMetric in otherMetricMap) {
-      if (otherMetric.indexOf(CLUSTER_PREFIX) == 0) {
-          // add cluster metrics to all agents
-          for (var agent in agentMap) {
-            log.info("    creating metric " + agent + "\|" + otherMetric + " = " + otherMetricMap[otherMetric]);
-            javascriptResultSetHelper.addMetric(agent + "\|" + otherMetric,
-              otherMetricMap[otherMetric],
-              otherMetricMap[otherMetric],
-              otherMetricMap[otherMetric],
-              otherMetricMap[otherMetric],
-              Packages.com.wily.introscope.spec.metric.MetricTypes.kLongFluctuatingCounter,
-              frequency);
-          }
-      } else {
-        log.info("    creating metric " + otherMetric + " = " + otherMetricMap[otherMetric]);
-          javascriptResultSetHelper.addMetric(otherMetric,
-            otherMetricMap[otherMetric],
-            otherMetricMap[otherMetric],
-            otherMetricMap[otherMetric],
-            otherMetricMap[otherMetric],
+        if (DEBUG) { log.debug("    creating metric " + otherMetric + " = " + otherMetricMap[otherMetric]); }
+        javascriptResultSetHelper.addMetric(otherMetric,
+          otherMetricMap[otherMetric],
+          otherMetricMap[otherMetric],
+          otherMetricMap[otherMetric],
+          otherMetricMap[otherMetric],
+          Packages.com.wily.introscope.spec.metric.MetricTypes.kLongFluctuatingCounter,
+          frequency);
+        createdCount++;
+    }
+
+    for (var clusterFrontendMetric in clusterFrontendValueMap) {
+        if (clusterFrontendMetric.indexOf("Average Response Time (ms)") > 0 && clusterFrontendValueMap[clusterFrontendMetric] > 0){
+            metricValue = clusterFrontendValueMap[clusterFrontendMetric]/clusterFrontendCountValueMap[clusterFrontendMetric];
+        }
+        else{
+            metricValue = clusterFrontendValueMap[clusterFrontendMetric];
+        }
+
+        if (DEBUG) { log.debug("    creating metric " + clusterFrontendMetric + " = " + metricValue); }
+        javascriptResultSetHelper.addMetric(clusterFrontendMetric,
+          clusterFrontendCountValueMap[clusterFrontendMetric],
+          metricValue,
+          clusterFrontendMinValueMap[clusterFrontendMetric],
+          clusterFrontendMaxValueMap[clusterFrontendMetric],
+          Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerDuration,
+				  frequency);
+        createdCount++;
+    }
+
+    for (var clusterBackendMetric in clusterBackendValueMap) {
+        if (clusterBackendMetric.indexOf("Average Response Time (ms)") > 0 && clusterBackendValueMap[clusterBackendMetric] > 0){
+            metricValue = clusterBackendValueMap[clusterBackendMetric]/clusterBackendCountValueMap[clusterBackendMetric];
+        }
+        else{
+            metricValue = clusterBackendValueMap[clusterBackendMetric];
+        }
+
+        if (DEBUG) { log.debug("    creating metric " + clusterBackendMetric + " = " + metricValue); }
+        javascriptResultSetHelper.addMetric(clusterBackendMetric,
+          clusterBackendCountValueMap[clusterBackendMetric],
+          metricValue,
+          clusterBackendMinValueMap[clusterBackendMetric],
+          clusterBackendMaxValueMap[clusterBackendMetric],
+          Packages.com.wily.introscope.spec.metric.MetricTypes.kIntegerDuration,
+				  frequency);
+        createdCount++;
+    }
+
+    for (var clusterOtherMetric in clusterOtherMetricMap) {
+        if (DEBUG) { log.debug("    creating metric " + clusterOtherMetric + " = " + clusterOtherMetricMap[clusterOtherMetric]); }
+          javascriptResultSetHelper.addMetric(clusterOtherMetric,
+            clusterOtherMetricMap[clusterOtherMetric],
+            clusterOtherMetricMap[clusterOtherMetric],
+            clusterOtherMetricMap[clusterOtherMetric],
+            clusterOtherMetricMap[clusterOtherMetric],
             Packages.com.wily.introscope.spec.metric.MetricTypes.kLongFluctuatingCounter,
             frequency);
-      }
+          createdCount++;
+    }
+
+    if (logSummary) {
+      log.info("calculator apim-aggregation.js created " + createdCount + " metrics");
     }
 
     return javascriptResultSetHelper;
 }
 
+// define which metrics to aggregate. DO NOT CHANGE!
 function getMetricRegex() {
     // get only leaf, not aggregated metrics
     return ".*\\|Gateway\\|Services\\|.+\\]:.*";
-}
-
-function getAgentRegex() {
-    return ".*";
 }
