@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ModelECore:StormSimulation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ModelECore="http://apmstudio.org/stormsimulation" fileName="PAPIPM.scenario" description="PAPIM Scenario" stormIdentifier="PAPIMScenario">
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 01" agent="EP_Agent_201" uniqueId="12345671-764a-4bad-bc5d-09978695a001" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a008">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Policy Violations" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345671-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0201.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 02" agent="EP_Agent_202" uniqueId="12345672-764a-4bad-bc5d-09978695a002" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345672-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0202.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 03" agent="EP_Agent_203" uniqueId="12345673-764a-4bad-bc5d-09978695a003" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345673-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0203.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 04" agent="EP_Agent_204" uniqueId="12345674-764a-4bad-bc5d-09978695a004" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345674-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0204.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 05" agent="EP_Agent_205" uniqueId="12345675-764a-4bad-bc5d-09978695a005" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345675-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0205.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+  <stormUnits stormType="Metric" description="Gateway Service Metrics 06" agent="EP_Agent_206" uniqueId="12345676-764a-4bad-bc5d-09978695a006" stormRunType="INFINITE">
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a001">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a002">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a003">
+      <reportingMetric baselineValue="8759" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a004">
+      <reportingMetric baselineValue="59437" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a005">
+      <reportingMetric baselineValue="3" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a006">
+      <reportingMetric baselineValue="100" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a007">
+      <reportingMetric baselineValue="100" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service A|foo|bar|search|v1|find [/franz/karl/exercise/v1/spring]:Success Count" variationLowPercent="30" variationHighPercent="50"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a011">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a012">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a013">
+      <reportingMetric baselineValue="8759" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a014">
+      <reportingMetric baselineValue="59437" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a015">
+      <reportingMetric baselineValue="3" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a016">
+      <reportingMetric baselineValue="80" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a017">
+      <reportingMetric baselineValue="80" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|karl|exercise|v3|spring [/franz/karl/exercise/v3/spring]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a021">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a022">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a023">
+      <reportingMetric baselineValue="8759" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a024">
+      <reportingMetric baselineValue="59437" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a025">
+      <reportingMetric baselineValue="3" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a026">
+      <reportingMetric baselineValue="127" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a027">
+      <reportingMetric baselineValue="127" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service B|franz|maria|exercise|v1|box [/franz/maria/exercise/v1/box]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a031">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a032">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a033">
+      <reportingMetric baselineValue="8759" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a034">
+      <reportingMetric baselineValue="59437" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a035">
+      <reportingMetric baselineValue="5" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a036">
+      <reportingMetric baselineValue="387" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a037">
+      <reportingMetric baselineValue="387" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|get [/jacqueline/monique/v8/get]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a041">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Back End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a042">
+      <reportingMetric baselineValue="10" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Front End Average Response Time (ms)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a043">
+      <reportingMetric baselineValue="8759" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Request size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a044">
+      <reportingMetric baselineValue="59437" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Response size (byte)" variationLowPercent="80" variationHighPercent="120"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a045">
+      <reportingMetric baselineValue="7" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Routing Failures" variationLowPercent="100" variationHighPercent="100"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a046">
+      <reportingMetric baselineValue="517" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Total Requests" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <stormDefinitions xsi:type="ModelECore:MetricDefinition" uniqueId="12345676-764a-4bad-bc5d-09978695a047">
+      <reportingMetric baselineValue="517" metric="atviegw0206.gg.broadcom.com|Gateway|Services|Service C|jacqueline|monique|v8|put [/jacqueline/monique/v8/put]:Success Count" variationLowPercent="30" variationHighPercent="30"/>
+    </stormDefinitions>
+    <runrule xsi:type="ModelECore:InfiniteRun"/>
+  </stormUnits>
+</ModelECore:StormSimulation>
