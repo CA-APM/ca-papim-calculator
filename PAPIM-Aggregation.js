@@ -69,7 +69,7 @@ function execute(metricData, javascriptResultSetHelper) {
     var gatewayString = "|Gateway|Services|";
 
     if (logSummary) {
-      log.information("calculator apim-aggregation.js started with " + metricData.length + " metrics");
+      log.info("calculator PAPIM-Aggregation.js started with " + metricData.length + " metrics");
     }
 
     // for every matching metric
@@ -382,7 +382,7 @@ function execute(metricData, javascriptResultSetHelper) {
     }
 
     if (logSummary) {
-      log.info("calculator apim-aggregation.js created " + createdCount + " metrics");
+      log.info("calculator PAPIM-Aggregation.js created " + createdCount + " metrics");
     }
 
     return javascriptResultSetHelper;
