@@ -41,9 +41,9 @@ function getMetricRegex() {
 * CA API Gateway 9.3 or later
 
 ## Configuration
-Before installing the calculator you have to configure the script to match your environment. Open `apim-aggregation.js` in an editor (e.g. Notepad on Windows or vi on Linux).
+Before installing the calculator you have to configure the script to match your environment. Open `PPAPIM-Aggregation.js` in an editor (e.g. Notepad on Windows or vi on Linux).
 
-1. If possible change the following regular expression at the top of `apim-aggregation.js` to match only the EPAgents in your environment that are handling Precision API Monitoring metrics. The fewer agents the expression matches the fewer ressources are needed to run the calculator! Change this code:
+1. If possible change the following regular expression at the top of `PAPIM-Aggregation.js` to match only the EPAgents in your environment that are handling Precision API Monitoring metrics. The fewer agents the expression matches the fewer ressources are needed to run the calculator! Change this code:
 ```
 // Step 1: define which agents to aggregate. Use smallest set possible!
 function getAgentRegex() {
@@ -79,15 +79,15 @@ var logSummary = true;
 ```
 
 ## Installation
-**Important!** Before installing this aggregation calculator you **MUST** change the existing javascript calculator `apim.js` as described under Prerequisites and configure `apim-aggregation.js` for your environment.
+**Important!** Before installing this aggregation calculator you **MUST** change the existing javascript calculator `apim.js` as described under Prerequisites and configure `PAPIM-Aggregation.js` for your environment.
 
-Only then copy `apim-aggregation.js` to `<EM_HOME>/scripts/apim.js`.
+Only then copy `PAPIM-Aggregation.js` to `<EM_HOME>/scripts/apim.js`.
 
 The Introscope Enterprise Manager will read the new script file within 60 seconds and log the following messages to `IntroscopeEnterpriseManager.log`. If you see an error message you probably have a syntax error in the code you changed.
 ```
-4/03/20 09:47:09.762 AM GMT [INFO] [TimerBean] [Manager.JavaScriptCalculator] Deploying JavaScript calculator /opt/CA/Introscope/./scripts/apim-aggregation.js
-4/03/20 09:47:09.763 AM GMT [INFO] [TimerBean] [Manager.JavascriptEngine] Initializing script from /opt/CA/Introscope/./scripts/apim-aggregation.js
-4/03/20 09:47:09.784 AM GMT [INFO] [TimerBean] [Manager.JavaScriptCalculator] Successfully added script /opt/CA/Introscope/./scripts/apim-aggregation.js
+4/03/20 09:47:09.762 AM GMT [INFO] [TimerBean] [Manager.JavaScriptCalculator] Deploying JavaScript calculator /opt/CA/Introscope/./scripts/PAPIM-Aggregation.js
+4/03/20 09:47:09.763 AM GMT [INFO] [TimerBean] [Manager.JavascriptEngine] Initializing script from /opt/CA/Introscope/./scripts/PAPIM-Aggregation.js
+4/03/20 09:47:09.784 AM GMT [INFO] [TimerBean] [Manager.JavaScriptCalculator] Successfully added script /opt/CA/Introscope/./scripts/PAPIM-Aggregation.js
 ```
 
 # Usage Instructions
@@ -98,17 +98,17 @@ All the metrics from each individual service will be aggregated at every level u
 ## Debugging and Troubleshooting
 If you want to have two messages logged to `IntroscopeEnterpriseManager.log` for every execution (every 15 seconds) set `var logSummary = true;`. The log messages will look like these:
 ```
-4/03/20 09:50:15.028 AM GMT [INFO] [master clock] [Manager.JavaScript|apim-aggregation.js] calculator apim-aggregation.js started with 390 metrics
-4/03/20 09:50:15.042 AM GMT [INFO] [master clock] [Manager.JavaScript|apim-aggregation.js] calculator apim-aggregation.js created 840 metrics
+4/03/20 09:50:15.028 AM GMT [INFO] [master clock] [Manager.JavaScript|PAPIM-Aggregation.js] calculator PAPIM-Aggregation.js started with 390 metrics
+4/03/20 09:50:15.042 AM GMT [INFO] [master clock] [Manager.JavaScript|PAPIM-Aggregation.js] calculator PAPIM-Aggregation.js created 840 metrics
 ```
 Use the number of metrics in the *start* message to make sure you send as few metrics as possible to the calculator. You can also calculate the time the calculator ran, e.g. 14ms in the above example.
 
-To debug the calculator you can set `var DEBUG = 1;` in `apim-aggregation.js`. This will log several messages per metric (!) to `IntroscopeEnterpriseManager.log` at log level DEBUG.
+To debug the calculator you can set `var DEBUG = 1;` in `PAPIM-Aggregation.js`. This will log several messages per metric (!) to `IntroscopeEnterpriseManager.log` at log level DEBUG.
 
 `DEBUG` is usually not configured for `IntroscopeEnterpriseManager.log` and you don't want to set the log level to `DEBUG` for the whole Enterprise Manager as it might have a performance impact, Therefore, we recommend to send the logs of the javascript calculator to a separate file by adding this log configuration to your `config/IntroscopeEnterpriseManager.properties`:
 ```
-log4j.logger.Manager.JavaScript|apim-aggregation.js=DEBUG,jclogfile1
-log4j.appender.jclogfile1.File=logs/apim-aggregation.js.log
+log4j.logger.Manager.JavaScript|PAPIM-Aggregation.js=DEBUG,jclogfile1
+log4j.appender.jclogfile1.File=logs/PAPIM-Aggregation.js.log
 log4j.appender.jclogfile1=com.wily.org.apache.log4j.RollingFileAppender
 log4j.appender.jclogfile1.layout=com.wily.org.apache.log4j.PatternLayout
 log4j.appender.jclogfile1.layout.ConversionPattern=%d{M/dd/yy hh:mm:ss.SSS a z} [%-3p] %m%n
