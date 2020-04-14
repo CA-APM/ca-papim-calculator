@@ -1,0 +1,640 @@
+{
+  "version": "1.0.0",
+  "state": {
+    "transactionAnalyzerPosition": "50",
+    "traceAnalyzerPosition": "50",
+    "traceInformationPosition": "50",
+    "selectedTransactionTraceKey": "571df131-7da9-448f-87d9-b723e16ba982",
+    "selectedCorrelatedTransactionTraceKey": "571df131-7da9-448f-87d9-b723e16ba982",
+    "selectedComponentKey": "571df131-7da9-448f-87d9-b723e16ba9821",
+    "data": {
+      "transactionTracesJSON": [
+        {
+          "summary": {
+            "traceId": "305cb896-79fd-445a-a507-fcee5bde8f98",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50af6"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863250445,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "e173f239-40b7-4a00-bea4-4b08ada89135",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b4c"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863316842,
+            "duration": 8,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "040ed378-aeac-4b0a-80a8-aea454caa56e",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50bce"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863416746,
+            "duration": 8,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "f52bb139-be07-4ffb-9fb9-9680a86028f1",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b1e"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863284293,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "02d3b250-23e5-4e52-b4cf-7841eb78875b",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50beb"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863431772,
+            "duration": 8,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "882ad034-b047-44b5-b8b6-2e1e917e1c78",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50a3b"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863113916,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "defe65d0-6817-46d4-a5b6-65a2499e8c5b",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c1a"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863470648,
+            "duration": 8,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "b92538ef-016e-45d0-af1f-c771795253f9",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50a4f"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863131430,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "0a89b5fc-a3fb-4673-bb1d-d5edb3d90666",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b38"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863299656,
+            "duration": 8,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "a59ee270-b263-4c7e-b51b-4745ada6a1d3",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b62"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863331986,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "d5a794d8-40cc-487e-997a-8ef1f32d70e6",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50a65"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863146769,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "1141817f-d93a-45ce-8628-589aad09ff29",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50a95"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863181688,
+            "duration": 5,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "4cdb9ede-f168-4051-a10f-cac186345671",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50a7b"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863166589,
+            "duration": 9,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "c5542f84-5664-44cb-b9d4-137a1ba4f065",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50aad"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863201021,
+            "duration": 7,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "6f06003b-85ed-40fd-95a8-ce60de0a96e4",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50ac2"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863216101,
+            "duration": 7,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "bc549686-9575-4626-9139-1cd1b7dfbba7",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50bff"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863450670,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "571df131-7da9-448f-87d9-b723e16ba982",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b09"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863269192,
+            "duration": 10,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "029cf87e-2403-4369-bc16-6574819d3dd9",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50ca7"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863572959,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "afada3ef-f50d-4927-aa6d-160738477070",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50ba9"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863384401,
+            "duration": 10,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "746533c7-4b91-4a07-95a9-318dda0a47e5",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c4b"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863505317,
+            "duration": 9,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "5786bf96-8e60-4c72-8377-52b99dc9aa00",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c36"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863485658,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "7a80810e-f5c1-4896-9514-77dd6cae276b",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c92"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863554139,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "b5e2977a-d12d-4f17-8323-cee89d0f3bc2",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b96"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863366465,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "85b027e6-7c38-432e-9901-ec77d4cca3ea",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50ad9"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863235390,
+            "duration": 11,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "cf37639a-077e-43ec-8764-7871d06dd393",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50b79"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863351332,
+            "duration": 11,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "83f5c44b-18c6-4d88-99d3-08bccdefc51e",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c76"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863539133,
+            "duration": 9,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "01eee1e6-e6bd-4e63-bdcf-007bf56aca38",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50bc1"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863399565,
+            "duration": 6,
+            "flags": 0
+          }
+        },
+        {
+          "summary": {
+            "traceId": "48a374eb-8e89-49f7-9f5f-f1310f00ba81",
+            "type": "Normal",
+            "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+            "corKeys": [
+              "CorCrossProcessData:000001715f5b0566.50c63"
+            ],
+            "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "compCount": 9,
+            "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+            "startTime": 1586863520661,
+            "duration": 7,
+            "flags": 0
+          }
+        }
+      ],
+      "correlatedTransactionTracesJSON": {
+        "resourcesMatched": 0,
+        "tracesMatched": 1,
+        "tracesLoaded": 1,
+        "tracesWithSnapshots": [],
+        "transactionData": [
+          {
+            "parentId": "test",
+            "summary": {
+              "traceId": "571df131-7da9-448f-87d9-b723e16ba982",
+              "type": "Normal",
+              "agent": "SSG_CLUSTER_HOST|Infrastructure|EP_Agent_205",
+              "corKeys": [
+                "CorCrossProcessData:000001715f5b0566.50b09"
+              ],
+              "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+              "compCount": 9,
+              "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+              "startTime": 1586863269192,
+              "duration": 10,
+              "flags": 0,
+              "host": "ssg_cluster_host"
+            },
+            "components": [
+              {
+                "parentId": 0,
+                "componentId": 1,
+                "resource": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+                "startTime": 1586863269192,
+                "description": "Business Segment|API Gateway atviegw0205.gg.broadcom.com|spring [/franz/karl/exercise/v3/spring]|Health",
+                "duration": 10,
+                "subNodeCount": 1,
+                "parameters": {
+                  "ATTR_Gateway Host": "atviegw0205.gg.broadcom.com",
+                  "TTPlugin.correlation.proxy.1.source.ip": "172.22.0.205",
+                  "Trace Type": "Normal",
+                  "TTPlugin.correlation.proxy.1.source.port": "18080",
+                  "ATTR_Gateway Cluster": "green-cluster.gg.broadcom.com",
+                  "TTPlugin.correlation.proxy.1.source.host": "atviegw0205.gg.broadcom.com",
+                  "ATTR_Gateway Folder": "",
+                  "DataCreationType": "0",
+                  "CorCrossProcessData": "000001715f5b0566.50b09",
+                  "Gateway Host": "atviegw0205.gg.broadcom.com"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 1,
+                "componentId": 2,
+                "resource": "Frontends|APIs|spring [/franz/karl/exercise/v3/spring]",
+                "startTime": 1586863269192,
+                "description": "Frontends|APIs|spring [/franz/karl/exercise/v3/spring]",
+                "duration": 10,
+                "subNodeCount": 2,
+                "parameters": {
+                  "ATTR_Gateway Host": "atviegw0205.gg.broadcom.com",
+                  "ATTR_Response Size (bytes)": "114",
+                  "ATTR_Gateway API": "spring [/franz/karl/exercise/v3/spring]",
+                  "TTPlugin.correlation.proxy.1.source.ip": "172.22.0.205",
+                  "ATTR_Client IP": "172.22.0.1",
+                  "TTPlugin.correlation.proxy.1.source.port": "18080",
+                  "ATTR_Gateway Cluster": "green-cluster.gg.broadcom.com",
+                  "TTPlugin.correlation.proxy.1.source.host": "atviegw0205.gg.broadcom.com",
+                  "ATTR_Gateway Folder": "",
+                  "DataCreationType": "0",
+                  "Application": "spring [/franz/karl/exercise/v3/spring]",
+                  "ATTR_Request Size (bytes)": "0"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 2,
+                "componentId": 4,
+                "resource": "Assertions|Dataengine|1|All assertions must evaluate to true",
+                "startTime": 1586863269192,
+                "description": "Assertions|Dataengine|1|All assertions must evaluate to true",
+                "duration": 10,
+                "subNodeCount": 3,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "compound"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 4,
+                "componentId": 7,
+                "resource": "Assertions|Dataengine|4|Route via HTTP(S)",
+                "startTime": 1586863269192,
+                "description": "Assertions|Dataengine|4|Route via HTTP(S)",
+                "duration": 9,
+                "subNodeCount": 1,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "backend"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 7,
+                "componentId": 8,
+                "resource": "Backends|Dataengine|Route via HTTP(S)|http://mundev000262.bpc.broadcom.net:6080/franz/karl/exercise/v3/spring",
+                "startTime": 1586863269192,
+                "description": "Backends|Dataengine|Route via HTTP(S)|http://mundev000262.bpc.broadcom.net:6080/franz/karl/exercise/v3/spring",
+                "duration": 9,
+                "subNodeCount": 0,
+                "parameters": {
+                  "ATTR_Uri": "http://mundev000262.bpc.broadcom.net:6080/franz/karl/exercise/v3/spring",
+                  "ATTR_Gateway API": "spring [/franz/karl/exercise/v3/spring]",
+                  "DataCreationType": "0"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 4,
+                "componentId": 6,
+                "resource": "Assertions|Dataengine|3|Evaluate Regular Expression",
+                "startTime": 1586863269192,
+                "description": "Assertions|Dataengine|3|Evaluate Regular Expression",
+                "duration": 0,
+                "subNodeCount": 0,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "simple"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 4,
+                "componentId": 5,
+                "resource": "Assertions|Dataengine|2|Customize SOAP Fault Response",
+                "startTime": 1586863269192,
+                "description": "Assertions|Dataengine|2|Customize SOAP Fault Response",
+                "duration": 0,
+                "subNodeCount": 0,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "simple"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 2,
+                "componentId": 3,
+                "resource": "Assertions|MTOM Global Policy|1|All assertions must evaluate to true",
+                "startTime": 1586863269192,
+                "description": "Assertions|MTOM Global Policy|1|All assertions must evaluate to true",
+                "duration": 0,
+                "subNodeCount": 1,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "compound"
+                },
+                "flags": 0
+              },
+              {
+                "parentId": 3,
+                "componentId": 9,
+                "resource": "Assertions|MTOM Global Policy|2|Decode MTOM Message",
+                "startTime": 1586863269192,
+                "description": "Assertions|MTOM Global Policy|2|Decode MTOM Message",
+                "duration": 0,
+                "subNodeCount": 0,
+                "parameters": {
+                  "DataCreationType": "0",
+                  "Gateway Assertion Type": "simple"
+                },
+                "flags": 0
+              }
+            ]
+          }
+        ],
+        "baResources": [],
+        "selectedTraceId": "571df131-7da9-448f-87d9-b723e16ba982",
+        "selectedCorrelatedTraceId": "571df131-7da9-448f-87d9-b723e16ba982"
+      }
+    },
+    "transactionTraceSetName": "Multiple selection"
+  }
+}
