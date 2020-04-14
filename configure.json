@@ -1,0 +1,78 @@
+{
+  "id": "PAPIM",
+  "version": "1.0.0",
+  "metricSpecifiers": {
+    "GENERICFRONTEND": [{
+        "metricSpecifier": {
+          "format": "<Gateway Host>\\|Gateway\\|Services.*\\|<Gateway API>",
+          "type": "REGEX"
+        },
+        "agentSpecifier": {
+          "format": "<agent>",
+          "type": "EXACT"
+        },
+        "section": "API Gateway",
+        "metricNames": [
+          "Front End Average Response Time (ms)",
+          "Back End Average Response Time (ms)",
+          "Success Count",
+          "Policy Violations",
+          "Routing Failures"
+        ]
+      },
+      {
+        "metricSpecifier": {
+          "format": "<Gateway Host>|Gateway|JVM",
+          "type": "EXACT"
+        },
+        "agentSpecifier": {
+          "format": "<agent>",
+          "type": "EXACT"
+        },
+        "section": "JVM Metrics",
+        "metricNames": [
+          "AverageSystemLoad"
+        ]
+      },
+      {
+        "metricSpecifier": {
+          "format": "<Gateway Host>|Gateway|JVM|Threads|States",
+          "type": "EXACT"
+        },
+        "agentSpecifier": {
+          "format": "<agent>",
+          "type": "EXACT"
+        },
+        "section": "Thread Metrics",
+        "metricNames": [
+          "BLOCKED",
+          "RUNNABLE"
+        ]
+      }
+    ]
+  },
+  "alertMappings": {
+    "GENERICFRONTEND": [
+      "<Gateway Host>|Gateway|Services|<Gateway API>",
+      "<Gateway Host>|Gateway|Services|*|<Gateway API>",
+      "<Gateway Host>|Gateway|Services|*|*|<Gateway API>",
+      "<Gateway Host>|Gateway|Services|*|*|*|<Gateway API>",
+      "<Gateway Host>|Gateway|Services|*|*|*|*|<Gateway API>",
+      "<Gateway Host>|Gateway|Services|*|*|*|*|*|<Gateway API>"
+   ]
+  },
+  "perspectives": [
+    {
+      "id": "PAPIM_1",
+      "name": "API Gateway, Application",
+      "layer": "ATC",
+      "groupBy": [{
+        "attributeName": "endUser"
+      }, {
+        "attributeName": "Gateway Cluster"
+      }, {
+        "attributeName": "applicationName"
+      }]
+    }
+  ]
+}
