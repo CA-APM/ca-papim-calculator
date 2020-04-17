@@ -81,7 +81,7 @@ var logSummary = true;
 ## Installation
 **Important!** Before installing this aggregation calculator you **MUST** change the existing javascript calculator `apim.js` as described under Prerequisites and configure `PAPIM-Aggregation.js` for your environment.
 
-Only then copy `PAPIM-Aggregation.js` to `<EM_HOME>/scripts/apim.js`.
+Only then copy `PAPIM-Aggregation.js` to `<EM_HOME>/scripts/`.
 
 The Introscope Enterprise Manager will read the new script file within 60 seconds and log the following messages to `IntroscopeEnterpriseManager.log`. If you see an error message you probably have a syntax error in the code you changed.
 ```
