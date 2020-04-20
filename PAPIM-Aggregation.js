@@ -8,16 +8,20 @@ function execute(metricData, javascriptResultSetHelper) {
     // Step 2: define all your clusters here
     var clusters = {
       "black" : [
-        "atviegw0201.gg.broadcom.com",
-        "atviegw0202.gg.broadcom.com",
-        "atviegw0203.gg.broadcom.com"
+        /atviegw\d+[1234]\.gg.broadcom.com/
       ],
       "white": [
-        "atviegw0204.gg.broadcom.com",
-        "atviegw0205.gg.broadcom.com",
-        "atviegw0206.gg.broadcom.com"
+        /atviegw\d+[56]\.gg.broadcom.com/
+      ],
+      "odd": [
+        /atviegw\d+[13579]\.gg.broadcom.com/
+      ],
+      "even": [
+        /atviegw\d+[24680]\.gg.broadcom.com/
       ]
     };
+//    /atviegw\d+[123]\.gg.broadcom.com/
+//        /atviegw\d+[13579]\.gg.broadcom.com/
 
     // Step 3: do you want a summary logged at every calculator execution (every 15 seconds?)
     var logSummary = true;
@@ -114,37 +118,31 @@ function execute(metricData, javascriptResultSetHelper) {
         // log.debug("found " + tokens.length + " tokens, metricName = " + metricName);
 
         var newMetricPath = agent;
-        var clusterMetricPath = CLUSTER_PREFIX;
+        var clusterMetricPaths = [];
         var writeCluster = false;
-        var cluster = 'not found';
 
-        for (var key in clusters) {
-          for (var clusterIndex = 0; clusterIndex < clusters[key].length; clusterIndex++) {
-            if (gateway == clusters[key][clusterIndex]) {
-              cluster = key;
-              clusterMetricPath = CLUSTER_PREFIX + cluster;
+        for (var clusterName in clusters) {
+          for (var clusterIndex = 0; clusterIndex < clusters[clusterName].length; clusterIndex++) {
+            if (clusters[clusterName][clusterIndex].test(gateway)) {
+              clusterMetricPaths.push(CLUSTER_PREFIX + clusterName);
               writeCluster = true;
+              if (DEBUG) { log.debug("   gateway = " + gateway + " found in cluster " + clusterName); }
               break;
             }
           }
         }
 
-        if (DEBUG) { log.debug("   gateway = " + gateway + " found in cluster " + cluster); }
 
         for (j = 0; j < tokens.length; ++j) {
 
           // build new metric path by adding next token
-          // if (j == CLUSTER) {
-          //   agentMap[agent] = agent;
-          //   newMetricPath = CLUSTER_PREFIX;
-          // } else {
-          //   newMetricPath = newMetricPath + "\|" + tokens[j];
-          // }
           newMetricPath = newMetricPath + "\|" + tokens[j];
           if (j > GATEWAY) {
             // no gateway in cluster metric path!
             // if token == 'gateway' append directly to cluster name
-            clusterMetricPath = clusterMetricPath + "\|" + tokens[j];
+            for (var k = 0; k < clusterMetricPaths.length; ++k) {
+              clusterMetricPaths[k] = clusterMetricPaths[k] + "\|" + tokens[j];
+            }
           }
           // only aggregate at selected levels
           // var found = false;
@@ -159,10 +157,8 @@ function execute(metricData, javascriptResultSetHelper) {
           // }
 
           var newMetricName = newMetricPath + metricName;
-          var clusterMetricName = clusterMetricPath + metricName;
           if (DEBUG) {
-            log.debug("newMetricName: " + newMetricName
-              + ", clusterMetricName: " + clusterMetricName + ", j: " + j);
+            log.debug("newMetricName: " + newMetricName + ", j: " + j);
           }
 
           // for weighted ART we need both value and count
@@ -190,26 +186,29 @@ function execute(metricData, javascriptResultSetHelper) {
             }
             // now also for cluster
             if (writeCluster && (j >= GATEWAY)) {
-              if (clusterFrontendValueMap[clusterMetricName] == null) {
-                clusterFrontendValueMap[clusterMetricName] = value * count;
-                clusterFrontendCountValueMap[clusterMetricName] = count;
-                clusterFrontendMinValueMap[clusterMetricName] = min;
-                clusterFrontendMaxValueMap[clusterMetricName] = max;
-              } else {
-                clusterFrontendValueMap[clusterMetricName] = value * count + clusterFrontendValueMap[clusterMetricName];
-                clusterFrontendCountValueMap[clusterMetricName] = count + clusterFrontendCountValueMap[clusterMetricName];
-                if (min < clusterFrontendMinValueMap[clusterMetricName]) { clusterFrontendMinValueMap[clusterMetricName] = min; }
-                if (max > clusterFrontendMaxValueMap[clusterMetricName]) { clusterFrontendMaxValueMap[clusterMetricName] = max; }
-              }
+              for (var k = 0; k < clusterMetricPaths.length; ++k) {
+                var clusterMetricName = clusterMetricPaths[k] + metricName;
 
-              if (DEBUG) {
-                log.debug("  Cluster FE ART * Count = " + clusterFrontendValueMap[clusterMetricName]
-                  + ", Cluster FE Count = " + clusterFrontendCountValueMap[clusterMetricName]
-                  + ", Cluster FE Min" + clusterFrontendMinValueMap[clusterMetricName]
-                  + ", Cluster FE Max" + clusterFrontendMaxValueMap[clusterMetricName]);
+                if (clusterFrontendValueMap[clusterMetricName] == null) {
+                  clusterFrontendValueMap[clusterMetricName] = value * count;
+                  clusterFrontendCountValueMap[clusterMetricName] = count;
+                  clusterFrontendMinValueMap[clusterMetricName] = min;
+                  clusterFrontendMaxValueMap[clusterMetricName] = max;
+                } else {
+                  clusterFrontendValueMap[clusterMetricName] = value * count + clusterFrontendValueMap[clusterMetricName];
+                  clusterFrontendCountValueMap[clusterMetricName] = count + clusterFrontendCountValueMap[clusterMetricName];
+                  if (min < clusterFrontendMinValueMap[clusterMetricName]) { clusterFrontendMinValueMap[clusterMetricName] = min; }
+                  if (max > clusterFrontendMaxValueMap[clusterMetricName]) { clusterFrontendMaxValueMap[clusterMetricName] = max; }
+                }
+
+                if (DEBUG) {
+                  log.debug("  Cluster FE ART * Count = " + clusterFrontendValueMap[clusterMetricName]
+                    + ", Cluster FE Count = " + clusterFrontendCountValueMap[clusterMetricName]
+                    + ", Cluster FE Min" + clusterFrontendMinValueMap[clusterMetricName]
+                    + ", Cluster FE Max" + clusterFrontendMaxValueMap[clusterMetricName]);
+                }
               }
             }
-
           } else if (metricName.endsWith(":Back End Average Response Time (ms)") ) {
             // for all but the metric name itself
             if (j < tokens.length-1) {
@@ -234,7 +233,10 @@ function execute(metricData, javascriptResultSetHelper) {
             }
             // now also for cluster
             if (writeCluster && (j >= GATEWAY)) {
-              if (clusterBackendValueMap[clusterMetricName] == null) {
+              for (var k = 0; k < clusterMetricPaths.length; ++k) {
+                var clusterMetricName = clusterMetricPaths[k] + metricName;
+
+                if (clusterBackendValueMap[clusterMetricName] == null) {
                   clusterBackendValueMap[clusterMetricName] = value * count;
                   clusterBackendCountValueMap[clusterMetricName] = count;
                   clusterBackendMinValueMap[clusterMetricName] = min;
@@ -252,6 +254,7 @@ function execute(metricData, javascriptResultSetHelper) {
                     + ", BE Min" + clusterBackendMinValueMap[clusterMetricName]
                     + ", BE Max" + clusterBackendMaxValueMap[clusterMetricName]);
                 }
+              }
             }
           } else {
             // for all but the metric name itself
@@ -266,13 +269,16 @@ function execute(metricData, javascriptResultSetHelper) {
             }
             // now also for cluster
             if (writeCluster && (j >= GATEWAY)) {
-              if (clusterOtherMetricMap[clusterMetricName] == null) {
-                clusterOtherMetricMap[clusterMetricName] = value;
-              } else {
-                clusterOtherMetricMap[clusterMetricName] = value + clusterOtherMetricMap[clusterMetricName];
-              }
+              for (var k = 0; k < clusterMetricPaths.length; ++k) {
+                var clusterMetricName = clusterMetricPaths[k] + metricName;
 
-              if (DEBUG) { log.debug("  " + clusterMetricName + " = " + clusterOtherMetricMap[clusterMetricName]); }
+                if (clusterOtherMetricMap[clusterMetricName] == null) {
+                  clusterOtherMetricMap[clusterMetricName] = value;
+                } else {
+                  clusterOtherMetricMap[clusterMetricName] = value + clusterOtherMetricMap[clusterMetricName];
+                }
+                if (DEBUG) { log.debug("  " + clusterMetricName + " = " + clusterOtherMetricMap[clusterMetricName]); }
+              }
             }
           }
         }
